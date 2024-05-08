@@ -1,0 +1,38 @@
+In the table, input signal names are included in row 2, output signal names are included in row 3, and signal radix is included in row 4.
+
+Create a single VHDL process stim_p, in a formatted code box, starting at row 5, and including the following 
+TestNo
+Comment in the Note column
+Assignment of each input signal. Do not assign any output signals.
+wait for (delay  * period); statement, with brackets as indicated, after all signal stimulus for the row have been assigned.
+Test if each output signal value matches the value included in the row, outputting a fail message if it does not match.
+
+signal testNo: integer;
+signal period: time := 20 ns;
+signal sw : std_logic;
+signal aShot : std_logic;
+
+TestNo 	delay       	 	 	Note
+Input signals		sw		
+Output signals		 	aShot	
+       		1'b	1'b	 
+1	2	0	0	 
+2	0	1	1	aShot assertion 
+3	1	1	0	aShot deassertion 
+4	2	1	0	
+5	3	0	0	
+6	0	1	1	aShot assertion 
+7	1	1	0	aShot deassertion 
+
+
+TestNo  		delay                    Note
+Input signals           sw     
+Output signals					aShot 
+						1'b     1'b
+1       		2       0       0
+2       		0       1       1        aShot assertion
+3       		1       1       0        aShot deassertion
+4       		2       1       0
+5       		3       0       0
+6       		0       1       1        aShot assertion
+7       		1       1       0        aShot deassertion

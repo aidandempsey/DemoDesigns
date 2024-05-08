@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<HDLGen>
+	<genFolder>
+		<vhdl_folder>singleShot/VHDL/model</vhdl_folder>
+		<vhdl_folder>singleShot/VHDL/testbench</vhdl_folder>
+		<vhdl_folder>singleShot/VHDL/ChatGPT</vhdl_folder>
+		<vhdl_folder>singleShot/VHDL/ChatGPT/Backups</vhdl_folder>
+		<vhdl_folder>singleShot/VHDL/AMDprj</vhdl_folder>
+	</genFolder>
+	<projectManager>
+		<settings>
+			<name>singleShot</name>
+			<environment>C:\videodemo\FiniteStateMachines_FSMs</environment>
+			<location>C:\videodemo\FiniteStateMachines_FSMs\singleShot</location>
+			<info>None</info>
+		</settings>
+		<EDA>
+			<tool>
+				<name>Xilinx Vivado</name>
+				<dir>C:/Xilinx/Vivado/2023.2/bin/vivado.bat</dir>
+				<version>2019.1</version>
+			</tool>
+		</EDA>
+		<HDL>
+			<language>
+				<name>VHDL</name>
+			</language>
+		</HDL>
+	</projectManager>
+	<hdlDesign>
+		<header>
+			<compName>singleShot</compName>
+			<title>Pulse generator, one clock period duration</title>
+			<description>One clock period duration pulse aShot asserted (h) when sw is asserted (h).&amp;#10;aShot deasserted on subsequent clk active (l-h) edge.&amp;#10;If rst asserted while sw is asserted&amp;#44; wait for sw to deassert before generating aShot &amp;#10;pulse on next rising edge on sw</description>
+			<authors>Fearghal Morgan</authors>
+			<company>University of Galway</company>
+			<email>fearghal.morgan@universityofgalway.ie</email>
+			<date>08/05/2024</date>
+		</header>
+		<clkAndRst>
+			<clkAndRst>
+				<activeClkEdge>L-H</activeClkEdge>
+				<rst>Yes</rst>
+				<RstType>asynch</RstType>
+				<ActiveRstLvl>1</ActiveRstLvl>
+			</clkAndRst>
+		</clkAndRst>
+		<entityIOPorts>
+			<signal>
+				<name>sw</name>
+				<mode>in</mode>
+				<type>single bit</type>
+				<description>Assertion L-H edge asserts signal aShot. Signal sw must &amp;#10;deassert before reassertion to genersate the subsequent &amp;#10;aShot pulse.</description>
+			</signal>
+			<signal>
+				<name>aShot</name>
+				<mode>out</mode>
+				<type>single bit</type>
+				<description>Asserted on L-H edge of signal sw. Deasserts on subsequent &amp;#10;active clk edge. Asserted for maximum one clock period.</description>
+			</signal>
+			<signal>
+				<name>clk</name>
+				<mode>in</mode>
+				<type>single bit</type>
+				<description>clk signal</description>
+			</signal>
+			<signal>
+				<name>rst</name>
+				<mode>in</mode>
+				<type>single bit</type>
+				<description>rst signal</description>
+			</signal>
+		</entityIOPorts>
+		<internalSignals>
+			<signal>
+				<name>NS</name>
+				<type>Enumerated type state signal pair(NS/CS)</type>
+				<description>Current / Next state signal</description>
+			</signal>
+			<signal>
+				<name>CS</name>
+				<type>Enumerated type state signal pair(NS/CS)</type>
+				<description>Current / Next state signal</description>
+			</signal>
+			<stateTypes>waitFor0</stateTypes>
+			<stateTypes>waitFor1</stateTypes>
+		</internalSignals>
+		<architecture>
+			<archName>RTL</archName>
+			<process>
+				<label>NSAndOPDeocde_p</label>
+				<inputSignal>sw</inputSignal>
+				<inputSignal>CS</inputSignal>
+				<defaultOutput>aShot,zero</defaultOutput>
+				<defaultOutput>NS,CS</defaultOutput>
+				<note>case CS&amp;#10;  waitFor1 &amp;#10;    if sw = 1 &amp;#10;       NS = waitFor0 &amp;#10;       aShot = 1 &amp;#10;  waitFor0&amp;#10;    if sw = 0&amp;#10;      NS = waitFor1</note>
+			</process>
+			<process>
+				<label>stateReg_p</label>
+				<inputSignal>clk</inputSignal>
+				<inputSignal>rst</inputSignal>
+				<defaultOutput>CS,rst state,NS,N/A</defaultOutput>
+				<note>None</note>
+			</process>
+		</architecture>
+		<testbench>
+			<TBNote>Signals	sw	aShot	Delay	TestNo	Note
+Mode	in	out	None	None	None
+Radix	1'b	1'b	None	None	None
+=	=	=	=	=	=
+	0	0	1	1	Note for test number 1
+	0	0	1	2	Note for test number 2
+	0	0	1	3	Note for test number 3
+# Example of a comment - comments are ignored by the testplan generator	
+# HDLGen-ChatGPT Test Specification	
+# Title: Pulse generator, one clock period duration	
+# Created by: Fearghal Morgan	
+# Date: 08/05/2024	
+# Component type: Register-Transfer Logic	
+</TBNote>
+		</testbench>
+		<chatgpt>
+			<commands>
+				<VHDLModel>Complete the following VHDL model&amp;#44; and output in a single formatted code box.&amp;#10;&amp;#10;Do not include any when-else VHDL constructs (conditional VHDL) inside process VHDL code (only supported in ieee 1076-2008).&amp;#10;Do not add any new library &amp;apos;use&amp;apos; statements&amp;#44; to avoid conflicts with the ieee.numeric_std package functions.&amp;#10;For every assignment which includes a shift operation&amp;#44; only use ieee.numeric_std package shift_left or shift_right functions&amp;#44; and do not use sra&amp;#44; srl&amp;#44; sll functions.&amp;#10;For each line containing the prefix &amp;apos;---&amp;apos;&amp;#44; replace with generated VHDL code for the logic described&amp;#44; and remove the &amp;apos;---&amp;apos;.&amp;#10;Do not include any when-else VHDL constructs (conditional VHDL) inside process VHDL code (only supported in ieee 1076-2008).&amp;#10;Remove all assignments in if or case statements which duplicate the default assignment&amp;#10;In VHDL processes&amp;#44; place the modified line containing suffix &amp;apos;-- Default assignment&amp;apos; immediately before the VHDL statements generated for lines containing prefix &amp;apos;---&amp;apos;.&amp;#10;Leave all labels unchanged.&amp;#10;For every assignment that includes an add (+) or subtract (-) operation&amp;#44; use &amp;apos;ieee.numeric_std&amp;apos; package signal type conversion functions to ensure correct VHDL syntax.&amp;#10;In assignments which include sign-extend operator&amp;#44; sign extending by one bit&amp;#44; use single quotes to define the single bit.</VHDLModel>
+				<VerilogModel># This ChatGPT message header is used with the HDLGen-generated HDL model template to generate the complete HDL model.&amp;#10;&amp;#10;Complete the following Verilog model&amp;#44; and output in a single formatted code box.&amp;#10;For each line containing the prefix &amp;apos;///&amp;apos;&amp;#44; replace with generated Verilog code for the logic described&amp;#44; and remove the &amp;apos;///&amp;apos;.&amp;#10;&amp;#10;Remove all assignments in if or case statements which duplicate the default assignment.&amp;#10;Use for loop (format for (i=0; i&amp;lt;32; i=i+1) around complete array signal assignments.&amp;#10;&amp;#10;Leave all labels unchanged.&amp;#10;Place the Verilog process line containing &amp;apos;// Default assignment&amp;apos;&amp;#44; unchanged&amp;#44; and immediately before the VHDL logic generated for lines containing prefix &amp;apos;///&amp;apos;.&amp;#10;Do not output the lines containing prefix &amp;apos;///&amp;apos;.&amp;#10;Include &amp;lt;= operator in assignments.&amp;#10;Make assignment bit widths compatible.</VerilogModel>
+			</commands>
+		</chatgpt>
+	</hdlDesign>
+</HDLGen>

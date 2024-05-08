@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed May  8 12:50:47 2024
+# Process ID: 7564
+# Current directory: C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.runs/RISCV_RB_bd_RWr_0_synth_1
+# Command line: vivado.exe -log RISCV_RB_bd_RWr_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCV_RB_bd_RWr_0.tcl
+# Log file: C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.runs/RISCV_RB_bd_RWr_0_synth_1/RISCV_RB_bd_RWr_0.vds
+# Journal file: C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.runs/RISCV_RB_bd_RWr_0_synth_1\vivado.jou
+# Running On: DESKTOP-FC0OD32, OS: Windows, CPU Frequency: 1800 MHz, CPU Physical cores: 4, Host memory: 12689 MB
+#-----------------------------------------------------------
+source RISCV_RB_bd_RWr_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 452.500 ; gain = 183.738
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: RISCV_RB_bd_RWr_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 82f100f5fecb1c37 to dir: C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.runs/RISCV_RB_bd_RWr_0_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.cache/ip/2023.2/8/2/82f100f5fecb1c37/RISCV_RB_bd_ce_0.dcp to C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.runs/RISCV_RB_bd_RWr_0_synth_1/RISCV_RB_bd_RWr_0.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.cache/ip/2023.2/8/2/82f100f5fecb1c37/RISCV_RB_bd_ce_0_sim_netlist.v to C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.runs/RISCV_RB_bd_RWr_0_synth_1/RISCV_RB_bd_RWr_0_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.cache/ip/2023.2/8/2/82f100f5fecb1c37/RISCV_RB_bd_ce_0_sim_netlist.vhdl to C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.runs/RISCV_RB_bd_RWr_0_synth_1/RISCV_RB_bd_RWr_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.cache/ip/2023.2/8/2/82f100f5fecb1c37/RISCV_RB_bd_ce_0_stub.v to C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.runs/RISCV_RB_bd_RWr_0_synth_1/RISCV_RB_bd_RWr_0_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.cache/ip/2023.2/8/2/82f100f5fecb1c37/RISCV_RB_bd_ce_0_stub.vhdl to C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/AMDprj/RISCV_RB.runs/RISCV_RB_bd_RWr_0_synth_1/RISCV_RB_bd_RWr_0_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP RISCV_RB_bd_RWr_0, cache-ID = 82f100f5fecb1c37.
+INFO: [Common 17-206] Exiting Vivado at Wed May  8 12:51:10 2024...

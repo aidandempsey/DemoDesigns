@@ -1,0 +1,64 @@
+# This ChatGPT message header is used with the HDLGen-generated HDL model template to generate the complete HDL model.
+
+Complete the following Verilog model, and output in a single formatted code box.
+For each line containing the prefix '///', replace with generated Verilog code for the logic described, and remove the '///'.
+
+Remove all assignments in if or case statements which duplicate the default assignment.
+Use for loop (format for (i=0; i<32; i=i+1) around complete array signal assignments.
+
+Leave all labels unchanged.
+Place the Verilog process line containing '// Default assignment', unchanged, and immediately before the VHDL logic generated for lines containing prefix '///'.
+Do not output the lines containing prefix '///'.
+Include <= operator in assignments.
+Make assignment bit widths compatible.
+
+// module declaration
+module singleShot(
+		clk,
+		rst,
+		sw,
+		aShot
+	);
+
+	// Port definitions
+	input  clk;
+	input  rst;
+	input  sw;
+	output  aShot;
+
+    reg  aShot;
+
+    // Internal signal declarations
+    parameter waitFor0 = 1'b0;
+    parameter waitFor1 = 1'b1;
+    reg  NS;
+    reg  CS;
+
+    always @(sw or CS)
+    begin : NSAndOPDeocde_p
+    	aShot <= 1'b0; // Default assignment
+    	NS <= CS; // Default assignment
+    /// case CS
+    ///  waitFor1 
+    ///  if sw = 1'b1 
+    ///  NS = waitFor0 
+    ///  aShot = 1'b1 
+    ///  waitFor0
+    ///  if sw = 1'b0
+    ///  NS = waitFor1
+    end
+
+    always @(posedge clk or posedge rst)
+    begin : stateReg_p	
+    	if ( rst == 1'b1 )
+    		begin
+    		CS <= waitFor0;
+    		end
+    	else
+    		begin
+    		CS <= NS;
+    		end
+    end
+
+endmodule
+

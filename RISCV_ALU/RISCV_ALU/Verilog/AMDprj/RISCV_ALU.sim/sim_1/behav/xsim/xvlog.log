@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/2023/HDLGenTop/myFiles/HDLGen-ChatGPT/User_Projects/RISCV/RISCV_ALU/Verilog/model/RISCV_ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RISCV_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/2023/HDLGenTop/myFiles/HDLGen-ChatGPT/User_Projects/RISCV/RISCV_ALU/Verilog/testbench/RISCV_ALU_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RISCV_ALU_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/2023/HDLGenTop/myFiles/HDLGen-ChatGPT/User_Projects/RISCV/RISCV_ALU/Verilog/AMDprj/RISCV_ALU.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

@@ -1,0 +1,142 @@
+
+
+The table is included at the end of the prompt.
+
+
+The format of the table is as follows
+Row 1 includes input signal name headings
+Row 2 includes radix for input signals
+Row 2 includes output signal name headings
+Row 2 includes radix for output signals
+Row 5 includes the following column headings
+Column 1: TestNo
+Column 2: delay
+Other:    Note
+Rows 6 onwards includes columns with values: TestNo, delay, input signal values, expected output signal values, Note
+
+Output a single formatted code box, including the following:
+
+Output a single VHDL process labelled stim_p, including the following elements (1-10), for each TestNo, though not including a for loop
+1. Do not include a for loop
+2. Do not include library declaration section, entity declaration section, architecture declaration section, signal declarations, or line which includes begin
+3. Do not include any signal declarations, or stim_p: process lines
+4. Signal TestNo, using TestNo <= integer assignment.
+5. Note column field, as a VHDL comment.
+6. Only for input signals: assign each input signal (omitting no input signals) to the value in its corresponding 'input' column, using the corresponding signal radix in the assignment. Do not assign any output signal values.
+7. Delay statement, format 'wait for (delay * period);', where delay is an integer or real value, never 0, placing the delay statement after all of the signal stimulus for the TestNo have been assigned, and always including brackets around the delay statement.
+8. Perform the following points a. to c.
+a. Compare each output signal with its corresponding value in the output signal column
+b. Output a separate VHDL assert/report statement for each output signal, with a warning message if the test fails,
+not including the keyword 'image or the symbol '&' or 'assertion'.
+c. Do not test any input signals.
+9. Do not include 'wait;'
+10. Do not include 'end process' line
+
+For signal which have a digit boundary width, use hexadecimal format in constant assignments, with 'x' prefix before double quotation marks.
+
+Do not include a separate process for each TestNo.
+Do not include "std_logic'image" or "time.image" or & operators in the report statements.
+Use a basic report statement syntax.
+Do not include 'For testNo' in the process.
+Replace all '\"' with '"'
+Do not output include more than one process.
+For all input signals, ensure use of the correct values and the correct signal widths.
+Do not include any VHDL 'for' loops in the output.
+Do not include 'for testNo in ..'  or 'case TestNo ..' statements.
+Do not include any VHDL variables.
+Do not assign any output signals.
+Do not include any other delay statements.
+Do not request that I '-- Continue with the remaining test cases...'. Please output code for all of the tests.
+Do not request that I '-- Repeat similar sections for the remaining tests...'. Please output code for all of the tests.
+Do not request that I '-- Comparison of output signals with expected values...'. Please output code for all of the tests.
+Do not request that I '-- Continue similar sections for the remaining tests...'. Please output code for all of the tests.
+
+signal testNo: integer;
+signal period: time := 20 ns;
+signal selALUOp : std_logic_vector(3 downto 0);
+signal A : std_logic_vector(31 downto 0);
+signal B : std_logic_vector(31 downto 0);
+signal ALUOut : std_logic_vector(31 downto 0);
+signal branch : std_logic;
+
+Input signals                 selALUOp  A         B
+
+Input signal radix            4'b       32'h      32'h     
+
+Output signals                                              ALUOut    branch
+
+Output signal radix                                         32'h      1'b
+
+TestNo              delay                                                     Note
+
+1                   1         0000      5a5a5a5a  15a5a5a6  70000000  0       sgnA + sgnB
+
+2                   1         0000      15a5a5a6  5a5a5a5a  70000000  0       sgnA + sgnB
+
+3                   1         0000      ffffffff  40000000  3fffffff  0       
+
+4                   1         0001      ffffffff  fffffffe  00000001  0       sgnA - sgnB
+
+5                   1         0010      f0c3a596  1f7e8ab4  10428094  0       A and B
+
+6                   1         0011      f0c3a596  1f7e8ab4  ffffafb6  0       A or B
+
+7                   1         0100      f0c3a596  1f7e8ab4  efbd2f22  0       A xor B
+
+8                   1         0101      f0c3a596  00000008  c3a59600  0       A << B(4:0) 
+
+shift left logical
+
+9                   1         0110      f0c3a596  00000008  00f0c3a5  0       A >> B(4:0) 
+
+shift right logical
+
+10                  1         0111      f0c3a596  00000008  fff0c3a5  0       A >>> B(4:0) 
+
+shift right arithmetic
+
+11                  1         1000      f0c3a596  1f7e8ab4  00000001  0       1 if sgn A < sgn 
+
+B
+
+12                  1         1001      f0c3a596  1f7e8ab4  00000000  0       1 if uns A < uns 
+
+B
+
+13                  1         1010      f0c3a596  1f7e8ab4  00000000  0       branch = 1 if A 
+
+= B
+
+14                  1         1010      f0c3a596  f0c3a596  00000000  1       branch = 1 if A 
+
+= B
+
+15                  1         1011      f0c3a596  1f7e8ab4  00000000  1       branch = 1 if A 
+
+!= B
+
+16                  1         1011      f0c3a596  f0c3a596  00000000  0       
+
+17                  1         1100      f0c3a596  1f7e8ab4  00000000  1       branch = 1 if 
+
+sgn A < sgnB
+
+18                  1         1100      f0c3a596  f0c3a596  00000000  0       
+
+19                  1         1101      f0c3a596  1f7e8ab4  00000000  0       branch = 1 if 
+
+sgn A >= sgnB
+
+20                  1         1101      f0c3a596  f0c3a596  00000000  1       
+
+21                  1         1110      f0c3a596  1f7e8ab4  00000000  0       branch = 1 if 
+
+uns A < uns B
+
+22                  1         1110      f0c3a593  f0c3a596  00000000  1       
+
+23                  1         1111      f0c3a596  1f7e8ab4  00000000  1       branch = 1 if 
+
+uns A >= uns B
+
+24                  1         1111      f0c3a596  f0c3a596  00000000  1

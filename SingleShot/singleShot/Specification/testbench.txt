@@ -1,0 +1,21 @@
+Mode	in	out	None	None	None
+Radix	1'b	1'b	None	None	None
+=	=	=	=	=	=
+	0	0	2	1	Note for test number 1
+	1	1	0.001	2	aShot assertion
+	1	0	0.009	3	aShot deassertion, state waitFor0
+	1	0	1	4	asShot deassertion
+	1	0	1	5	state waitFor1
+	1	1	0.001	6	aShot assertion
+	0	0	0.009	7	aShot deassertion, state waitFor1
+	1	0	1	8	state waitFor0
+	0	0	1	9	state waitFor1
+	1	0	1	10	state waitFor0
+	0	0	1	11	state waitFor1
+					
+# Example of a comment - comments are ignored by the testplan generator					
+# HDLGen-ChatGPT Test Specification					
+# Title: Pulse generator, one clock period duration					
+# Created by: Fearghal Morgan					
+# Date: 29/03/2024					
+# Component type: Register-Transfer Logic

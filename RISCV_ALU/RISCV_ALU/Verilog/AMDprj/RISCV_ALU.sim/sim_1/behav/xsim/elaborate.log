@@ -1,0 +1,14 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 98dab1f1dfff45b680f295a4bc1407ad --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RISCV_ALU_TB_behav xil_defaultlib.RISCV_ALU_TB xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/2023/HDLGenTop/myFiles/HDLGen-ChatGPT/User_Projects/RISCV/RISCV_ALU/Verilog/AMDprj/RISCV_ALU.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.RISCV_ALU
+Compiling module xil_defaultlib.RISCV_ALU_TB
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot RISCV_ALU_TB_behav

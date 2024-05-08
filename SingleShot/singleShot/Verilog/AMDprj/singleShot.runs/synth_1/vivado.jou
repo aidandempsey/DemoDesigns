@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Jun 21 14:22:53 2023
+# Process ID: 28020
+# Current directory: C:/2023/vicilogic/HDLGenTop/HDLGen_V1906/User_Projects/sequential/FiniteStateMachines_FSMs/singleShot/Verilog/AMDprj/singleShot.runs/synth_1
+# Command line: vivado.exe -log singleShot.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source singleShot.tcl
+# Log file: C:/2023/vicilogic/HDLGenTop/HDLGen_V1906/User_Projects/sequential/FiniteStateMachines_FSMs/singleShot/Verilog/AMDprj/singleShot.runs/synth_1/singleShot.vds
+# Journal file: C:/2023/vicilogic/HDLGenTop/HDLGen_V1906/User_Projects/sequential/FiniteStateMachines_FSMs/singleShot/Verilog/AMDprj/singleShot.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source singleShot.tcl -notrace

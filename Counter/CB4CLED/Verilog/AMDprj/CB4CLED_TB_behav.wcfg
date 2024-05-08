@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="CB4CLED_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="CB4CLED_TB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+
+   <zoom_setting>
+      <ZoomStartTime time="350ns"></ZoomStartTime>
+      <ZoomEndTime time="1100ns"></ZoomEndTime>
+      <Cursor1Time time="1100ns"></Cursor1Time>
+   </zoom_setting>
+
+   <column_width_setting>
+      <NameColumnWidth column_width="250"></NameColumnWidth>
+      <ValueColumnWidth column_width="70"></ValueColumnWidth>
+   </column_width_setting>
+
+   <WVObjectSize size="4" />
+   <wvobject fp_name="/CB4CLED_TB/testNo" type="other">
+      <obj_property name="ElementShortName">testNo</obj_property>
+      <obj_property name="ObjectShortName">testNo</obj_property>
+   </wvobject>
+
+   <wvobject fp_name="/CB4CLED_TB/endOfSim" type="other">
+      <obj_property name="ElementShortName">endOfSim</obj_property>
+      <obj_property name="ObjectShortName">endOfSim</obj_property>
+   </wvobject>
+
+    <wvobject fp_name="UUTGroup" type="group">
+      <obj_property name="label">UUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="group30" type="group">
+         <obj_property name="label">entity</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/clk" type="logic">
+        <obj_property name="ElementShortName">clk</obj_property>
+        <obj_property name="ObjectShortName">clk</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/rst" type="logic">
+        <obj_property name="ElementShortName">rst</obj_property>
+        <obj_property name="ObjectShortName">rst</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/load" type="logic">
+        <obj_property name="ElementShortName">load</obj_property>
+        <obj_property name="ObjectShortName">load</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/loadDat" type="array">
+        <obj_property name="ElementShortName">loadDat[3:0]</obj_property>
+        <obj_property name="ObjectShortName">loadDat[3:0]</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/ce" type="logic">
+        <obj_property name="ElementShortName">ce</obj_property>
+        <obj_property name="ObjectShortName">ce</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/up" type="logic">
+        <obj_property name="ElementShortName">up</obj_property>
+        <obj_property name="ObjectShortName">up</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/count" type="array">
+        <obj_property name="ElementShortName">count[3:0]</obj_property>
+        <obj_property name="ObjectShortName">count[3:0]</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/TC" type="logic">
+        <obj_property name="ElementShortName">TC</obj_property>
+        <obj_property name="ObjectShortName">TC</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/ceo" type="logic">
+        <obj_property name="ElementShortName">ceo</obj_property>
+        <obj_property name="ObjectShortName">ceo</obj_property>
+    </wvobject>
+
+    </wvobject>
+    <wvobject fp_name="UUTInternalSignalGroup" type="group">
+        <obj_property name="label">internal</obj_property>
+        <obj_property name="DisplayName">label</obj_property>
+    <obj_property name="isExpanded"></obj_property>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/intTC" type="logic">
+         <obj_property name="ElementShortName">intTC</obj_property>
+         <obj_property name="ObjectShortName">intTC</obj_property>
+      </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/CS" type="array">
+         <obj_property name="ElementShortName">CS[3:0]</obj_property>
+         <obj_property name="ObjectShortName">CS[3:0]</obj_property>
+      </wvobject>
+
+    <wvobject fp_name="/CB4CLED_TB/UUT/NS" type="array">
+         <obj_property name="ElementShortName">NS[3:0]</obj_property>
+         <obj_property name="ObjectShortName">NS[3:0]</obj_property>
+      </wvobject>
+	</wvobject>
+  </wvobject>
+</wave_config>

@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../../Package/MainPackage.vhd" \
+"../../../../../model/RISCV_RB.vhd" \
+"../../../../../testbench/RISCV_RB_TB.vhd" \
+
+# Do not sort compile order
+nosort

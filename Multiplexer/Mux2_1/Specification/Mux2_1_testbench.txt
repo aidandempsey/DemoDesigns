@@ -1,0 +1,13 @@
+Signals	dIn0	dIn1	sel	dOut	Delay	TestNo	Note
+Mode	in	in	in	out	None	None	None
+Radix	1'b	1'b	1'b	1'b	None	None	None
+=	=	=	=	=	=	=	=
+	0	1	0	0	1	1	Select Datapath 0 with Value of 0
+	0	1	1	1	1	2	Select Datapath 1 with Value of 1
+	1	0	0	1	1	3	Select Datapath 0 with Value of 1
+	1	0	1	0	1	3	Select Datapath 1 with Value of 0
+# HDLGen-ChatGPT Test Specification							
+# Title: 2 to 1 Multiplexer							
+# Created by: Luke Canny							
+# Date: 18/04/2024							
+# Component type: Register-Transfer Logic

@@ -1,0 +1,80 @@
+
+The test plan table format includes
+row 1: input signal names
+row 2: output signal names
+row 3: signal radix
+row 4: column headings TestNo, delay and Note
+column 2: TestNo test number (integer)
+column 3: delay
+
+For reference, output all input signal names and all output signal names, as a Verilog comment.
+
+Create and output a single Verilog initial stim_p, in a formatted code box, including the following, for each TestNo row:
+Integer signal TestNo with value taken from table column 2
+Note field, as a Verilog comment
+Assignment of every input signal, irrespective of its value, using the signal radix format defined in table row 3. Do not omit any input signal assignents.
+A delay statement, format '# (delay * period);', where delay is an integer or real value, never 0, placing the delay statement after all of the signal stimulus for the TestNo have been assigned, and always including brackets around the delay * statement.
+Comparison of every output (not input) signal with the value included in its corresponding output signal column (not the Note column), outputting a warning message (including TestNo) if the values do not match.
+
+Do not include any Verilog loops in the output.
+Do not assign any output signals.
+Do not include 'case TestNo' in the output.
+Do not include any other delay statements.
+Do not request that I '-- Continue with the remaining test cases...'. Please output code for all of the tests.
+Do not request that I '-- Repeat similar sections for the remaining tests...'. Please output code for all of the tests.
+Do not request that I '-- Comparison of output signals with expected values...'. Please output code for all of the tests.
+Do not request that I '-- Continue similar sections for the remaining tests...'. Please output code for all of the tests.
+
+integer testNo;
+parameter period = 20; // 20 ns
+reg  load;
+reg [3:0] loadDat;
+reg  ce;
+reg  up;
+wire [3:0] count;
+wire  TC;
+wire  ceo;
+
+inputs                 load loadDat ce  up 				 
+
+outputs                                     count TC  ceo 
+
+                       1'b  4'b     1'b 1'b 4'b   1'b 1'b
+
+        TestNo delay                                      Note
+
+        1      1       1    1110    0   0   1110  0   0   Synchronously load count 
+
+        2      1       0    0101    0   1   1110  0   0   No change since ce deasserted 
+
+        3      1       0    0101    1   1   1111  1   1   counter synchronously increments to 0xF (0d15, 0b1111), 
+
+terminal count asserted, chip enabl;e output asserted 
+
+        4      0.1     0    0101    0   1   1111  1   0   ceo unregistered chip enable output signal deasserts, since ce 
+
+deasserted
+
+        5      0.1     0    0101    0   1   1111  1   1   ceo reasserts 
+
+        6      1.8     0    0101    1   1   0001  0   0   simulate across two active clk edges. count increments through 
+
+0 to 1
+
+        7      1       0    0101    1   0   0000  1   1   count down to 0. TC and ceo assert 
+
+        8      0.1     0    0101    0   0   0000  1   0   ceo deasserts, since ce deasserted
+
+        9      0.1     0    0101    1   0   0000  1   1   ceo reasserts 
+
+        10     0.8     0    0101    1   0   1111  0   0   simulate to active clk edge. count decrements to 0xf (0d15, 
+
+0b1111) 
+
+        11     0.1     0    0101    1   1   1111  1   1   TC and ceo unregistered signals assert, since up asserted
+
+        12     0.1     0    0101    1   0   1111  1   1   TC and ceo deassert, since up deasserted
+
+        13     13.8    0    0101    1   0   0001  0   0   count down to 1     
+
+        14     5       0    0101    1   1   0110  1   1   count up to 6

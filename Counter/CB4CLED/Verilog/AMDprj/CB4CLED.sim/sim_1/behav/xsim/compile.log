@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/Verilog/model/CB4CLED.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CB4CLED
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/Verilog/testbench/CB4CLED_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CB4CLED_TB

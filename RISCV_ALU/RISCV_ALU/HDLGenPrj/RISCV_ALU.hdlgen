@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<HDLGen>
+	<genFolder>
+		<vhdl_folder>RISCV_ALU/VHDL/model</vhdl_folder>
+		<vhdl_folder>RISCV_ALU/VHDL/testbench</vhdl_folder>
+		<vhdl_folder>RISCV_ALU/VHDL/ChatGPT</vhdl_folder>
+		<vhdl_folder>RISCV_ALU/VHDL/ChatGPT/Backups</vhdl_folder>
+		<vhdl_folder>RISCV_ALU/VHDL/AMDprj</vhdl_folder>
+	</genFolder>
+	<projectManager>
+		<settings>
+			<name>RISCV_ALU</name>
+			<environment>C:\demo\RISCV</environment>
+			<location>C:\demo\RISCV\RISCV_ALU</location>
+			<info>None</info>
+		</settings>
+		<EDA>
+			<tool>
+				<name>Xilinx Vivado</name>
+				<dir>C:/Xilinx/Vivado/2023.2/bin/vivado.bat</dir>
+				<version>2019.1</version>
+			</tool>
+		</EDA>
+		<HDL>
+			<language>
+				<name>VHDL</name>
+			</language>
+		</HDL>
+	</projectManager>
+	<hdlDesign>
+		<header>
+			<compName>RISCV_ALU</compName>
+			<title>RV32I RISC-V Arithmetic Logic Unit (ALU)</title>
+			<description>RISC-V Arithmetic Logic Unit (RISCV_ALU) &amp;#10;&amp;#10;Combinational logic component&amp;#10;Input signal selALUOp(3:0) selects ALU function.&amp;#10;32-bit data inputs A&amp;#44; B&amp;#10;32-bit data output ALUOut&amp;#10;Output signal branch&amp;#44; asserted when branch condition is true</description>
+			<authors>Fearghal Morgan</authors>
+			<company>University of Galway</company>
+			<email>fearghal.morgan@universityofgalway.ie</email>
+			<date>17/04/2024</date>
+		</header>
+		<clkAndRst/>
+		<entityIOPorts>
+			<signal>
+				<name>selALUOp</name>
+				<mode>in</mode>
+				<type>bus(3 downto 0)</type>
+				<description>ALU control signal</description>
+			</signal>
+			<signal>
+				<name>A</name>
+				<mode>in</mode>
+				<type>bus(31 downto 0)</type>
+				<description>ALU data input A</description>
+			</signal>
+			<signal>
+				<name>B</name>
+				<mode>in</mode>
+				<type>bus(31 downto 0)</type>
+				<description>ALU data input B</description>
+			</signal>
+			<signal>
+				<name>ALUOut</name>
+				<mode>out</mode>
+				<type>bus(31 downto 0)</type>
+				<description>ALU data output</description>
+			</signal>
+			<signal>
+				<name>branch</name>
+				<mode>out</mode>
+				<type>single bit</type>
+				<description>Asserted (h) for branch operation (selALOp(3:0) = 10-15, if &amp;#10;branch condition check is true</description>
+			</signal>
+		</entityIOPorts>
+		<internalSignals/>
+		<architecture>
+			<archName>Combinational</archName>
+			<process>
+				<label>ALUOut_p</label>
+				<inputSignal>selALUOp</inputSignal>
+				<inputSignal>A</inputSignal>
+				<inputSignal>B</inputSignal>
+				<defaultOutput>ALUOut,zero</defaultOutput>
+				<note>case selALUOp &amp;#10; 0000 ALUOut = signed A + signed B                               &amp;#10; 0001 ALUOut = signed A - signed B                                &amp;#10; 0010 ALUOut = A and B                                     &amp;#10; 0011 ALUOut = A or B                                      &amp;#10; 0100 ALUOut = A xor B                                     &amp;#10; 0101 ALUOut = A &amp;lt;&amp;lt; B(4:0)                                 &amp;#10; 0110 ALUOut = A &amp;gt;&amp;gt; B(4:0)                                 &amp;#10; 0111 ALUOut = A &amp;gt;&amp;gt;&amp;gt; B(4:0)                                &amp;#10; 1000 if signed(A) &amp;lt; signed(B)                  &amp;#10;           ALUOut = 0x00000001 &amp;#10;         end if&amp;#10; 1001 if unsigned(A) &amp;lt; unsigned(B)&amp;#10;           ALUOut = 0x00000001 &amp;#10;         end if&amp;#10;end case</note>
+			</process>
+			<process>
+				<label>branch_p</label>
+				<inputSignal>selALUOp</inputSignal>
+				<inputSignal>A</inputSignal>
+				<inputSignal>B</inputSignal>
+				<defaultOutput>branch,zero</defaultOutput>
+				<note>case selALUOp&amp;#10; 1010 branch = 1 if unsigned(A) = unsigned(B) end if&amp;#10; 1011 branch = 1 if unsigned(A) != unsigned(B) end if  &amp;#10; 1100 branch = 1 if signed(A)   &amp;lt; signed(B) end if&amp;#10; 1101 branch = 1 if signed(A)   &amp;gt;= signed(B) end if      &amp;#10; 1110 branch = 1 if unsigned(A) &amp;lt; unsigned(B) end if   &amp;#10; 1111 branch = 1 if unsigned(A) &amp;gt;= unsigned(B) end if&amp;#10;end case</note>
+			</process>
+		</architecture>
+		<testbench>
+			<TBNote>Signals	selALUOp	A	B	ALUOut	branch	Delay	TestNo	Note
+Mode	in	in	in	out	out	None	None	None
+Radix	4'b	32'h	32'h	32'h	1'b	None	None	None
+=	=	=	=	=	=	=	=	=
+	0000	5a5a5a5a	15a5a5a6	70000000	0	1	1	sgnA + sgnB
+	0000	15a5a5a6	5a5a5a5a	70000000	0	1	2	sgnA + sgnB
+	0000	ffffffff	40000000	3fffffff	0	1	3	
+	0001	ffffffff	fffffffe	00000001	0	1	4	sgnA - sgnB
+	0010	f0c3a596	1f7e8ab4	10428094	0	1	5	A and B
+	0011	f0c3a596	1f7e8ab4	ffffafb6	0	1	6	A or B
+	0100	f0c3a596	1f7e8ab4	efbd2f22	0	1	7	A xor B
+	0101	f0c3a596	00000008	c3a59600	0	1	8	A &lt;&lt; B(4:0) shift left logical
+	0110	f0c3a596	00000008	00f0c3a5	0	1	9	A &gt;&gt; B(4:0) shift right logical
+	0111	f0c3a596	00000008	fff0c3a5	0	1	10	A &gt;&gt;&gt; B(4:0) shift right arithmetic
+	1000	f0c3a596	1f7e8ab4	00000001	0	1	11	1 if sgn A &lt; sgn B
+	1001	f0c3a596	1f7e8ab4	00000000	0	1	12	1 if uns A &lt; uns B
+	1010	f0c3a596	1f7e8ab4	00000001	0	1	13	branch = 1 if A = B
+	1010	f0c3a596	f0c3a596	00000002	1	1	14	branch = 1 if A = B
+	1011	f0c3a596	1f7e8ab4	00000003	1	1	15	branch = 1 if A != B
+	1011	f0c3a596	f0c3a596	00000004	0	1	16	
+	1100	f0c3a596	1f7e8ab4	00000005	1	1	17	branch = 1 if sgn A &lt; sgnB
+	1100	f0c3a596	f0c3a596	00000006	0	1	18	
+	1101	f0c3a596	1f7e8ab4	00000007	0	1	19	branch = 1 if sgn A &gt;= sgnB
+	1101	f0c3a596	f0c3a596	00000008	1	1	20	
+	1110	f0c3a596	1f7e8ab4	00000009	0	1	21	branch = 1 if uns A &lt; uns B
+	1110	f0c3a593	f0c3a596	00000010	1	1	22	
+	1111	f0c3a596	1f7e8ab4	00000011	1	1	23	branch = 1 if uns A &gt;= uns B
+	1111	f0c3a596	f0c3a596	00000012	1	1	24	
+# Example of a comment - comments are ignored by the testplan generator								
+# HDLGen-ChatGPT Test Specification								
+# Title: RV32I RISC-V Arithmetic Logic Unit (ALU)								
+# Created by: Fearghal Morgan								
+# Date: 22/02/2024								
+# Component type: Register-Transfer Logic</TBNote>
+		</testbench>
+		<chatgpt>
+			<commands>
+				<VHDLModel>~ Notes START ===============&amp;#10;~ &amp;quot;~&amp;quot; is comment line prefix&amp;#10;&amp;#10;~ 1. HDLGen-ChatGPT builds the ChatGPT HDL model completion prompt.&amp;#10;~ The prompt includes the following sections&amp;#10;~ a) ChatGPT HDL model completion prompt header&amp;#44; instructing ChatGPT&amp;#10;~ The prompts included in this file have been developed following testing on a range or combinational&amp;#44; sequential and hierarchical designs.&amp;#10;~ Each prompt has an accompanying explanation (in a comment)&amp;#10;~ Prompts are included which request generate of specific code output&amp;#10;~ Prompts are included which request avoidance of generating specific code output&amp;#10;~ b) HDL model template&amp;#44; generated by HDLGen-ChatGPT.&amp;#10;&amp;#10;~ 2. The VHDL model template includes the following sections:&amp;#10;~ Title (creation date&amp;#44; component name&amp;#44; description&amp;#44; creator details&amp;#44; signal dictionary)&amp;#10;~ VHDL library declarations&amp;#44; including IEEE 1164 (VHDL) libraries&amp;#44; IEEE.numeric_std library and a MainPackage library&amp;#44; located in the project environment folder.&amp;#10;~ VHDL entity declaration&amp;#44; describing input and output signals and their signal types&amp;#10;~ VHDL architecture&amp;#10;~ Internal signal declarations&amp;#10;~ Component declarations&amp;#44; if the design references hierarchical components&amp;#10;~ VHDL processes&amp;#44; possibly including logic pseudo code (marked with --- prefix) for ChatGPT VHDL generation&amp;#10;~ VHDL component instantiations&amp;#44; if the design is hierarchical&amp;#10;~ VHDL concurrent statements&amp;#44; possibly including logic pseudo code (marked with --- prefix) for ChatGPT VHDL generation&amp;#10;&amp;#10;~ 3. HDLGen-ChatGPT (https://github.com/fearghal1/HDLGen-ChatGPT)has been tested primarily using the free GPT-3.5&amp;#10;~ Later (subscription-based) GPT releases are expected to produce similar or better quality results&amp;#10;~ Note that ChatGPT does not always generate output exactly as expected&amp;#10;&amp;#10;~ 4. You can modify/edit this ChatGPT HDL model completion prompt header. If so&amp;#44; include explanatiom using the ~ comment prefix&amp;#10;&amp;#10;~ 5. Individual prompts (from this list&amp;#44; or new prompts) can be submitted as individual prompts&amp;#44; following a ChatGPT run&amp;#44; to refine the output&amp;#10;~ Examples:&amp;#10;~ Enter &amp;apos;continue&amp;apos; to continue incomplete output to a code box&amp;#10;~ Click the ChatGPT menu &amp;apos;&amp;gt; Continue generating&amp;apos; button if it appears&amp;#44; to continue incomplete output to a code box&amp;#10;~ Copy any prompt from this file and paste in the ChatGPT message box and click the arrow&amp;#10;~ Type a new prompt in the ChatGPT message box and click the arrow&amp;#10;~ Notes END&amp;#x9;===============&amp;#10;&amp;#10;~ Main prompt to ChatGPT&amp;#10;Complete the following VHDL model&amp;#44; and output in a single formatted code box.&amp;#10;&amp;#10;~ The next lines are auto-populated by HDLGen-ChatGPT&amp;#44; based on process and concurrent statements in the VHDL model template.&amp;#10;~ In HDLGen-ChatGPT &amp;apos;Generate &amp;gt; Edit ChatGPT Prompt Header&amp;apos; menu&amp;#44; uncomment one of the following lines to output a specific selected process or concurrent statement.&amp;#10;~Complete ONLY the VHDL code for the PROCESS ALUOut_p &amp;#44; in a single formatted code box&amp;#10;~Complete ONLY the VHDL code for the PROCESS branch_p &amp;#44; in a single formatted code box&amp;#10;&amp;#10;~***Reserved for concurrent statements***&amp;#10;&amp;#10;~ Retain VHDL comments unchanged&amp;#10;Do not remove any comments beginning with &amp;apos;-- &amp;apos;&amp;#44; i.e&amp;#44; only two dashes&amp;#10;&amp;#10;~ Enhance the title section text&amp;#44; e.g&amp;#44; align and format text&amp;#10;~ Remove/add the comment (~) character on the next two lines&amp;#44; to activate/deactivate.&amp;#10;~ Deactivation speeds up the ChatGPT HDL model completion&amp;#44; by removing the title section generation.&amp;#10;~ Do not include the code between and including lines &amp;apos;-- Title Section Start&amp;apos; and &amp;apos;-- Title Section End&amp;apos;.&amp;#10;For each line between -- Title section start and -- Title section end&amp;#44; improve the text formatting&amp;#10;&amp;#10;For each line containing the prefix &amp;apos;---&amp;apos;&amp;#44; generate VHDL code describing the logic&amp;#44; applying the following rules.&amp;#10;~ Translate model combination logic pseudo code lines which include the &amp;apos;---&amp;apos; prefix to syntactically-correct HDL.&amp;#10;Remove the &amp;apos;--- &amp;apos;  prefix from the line.&amp;#10;~ Remove the --- after processing.&amp;#10;&amp;#10;For arithmetic operations&amp;#44; use type casting to support signal type requirements in ieee.numeric_std arithmetic functions.&amp;#10;For all +&amp;#44; -&amp;#44; *&amp;#44; / operations&amp;#44; ensure correct signal type conversion.&amp;#10;~ If ChatGPT generates addOut &amp;lt;= addin1 + addIn0;  for std_logic_vector signals&amp;#44; the EDA tool may highlight an error&amp;#44;&amp;#10;~  such as &amp;apos;Cannot determine exact overloaded match definition for &amp;quot;+&amp;quot;&amp;apos;&amp;#10;~ If so&amp;#44; re-run the above prompt&amp;#10;~ Arithmetic operations are supported by the IEEE.numeric_std library&amp;#44; https://redirect.cs.umbc.edu/portal/help/VHDL/packages/numeric_std.vhd&amp;#10;~ e.g&amp;#44; operations such as + (addition) often require input signal type conversion to support the overloaded operator functions&amp;#44;&amp;#10;~ + function supports the following overloaded operations&amp;#10;~ -- Id: A.3  function &amp;quot;+&amp;quot; ( L&amp;#44;R: UNSIGNED)           return UNSIGNED&amp;#10;~ -- Id: A.4  function &amp;quot;+&amp;quot; ( L&amp;#44;R: SIGNED)             return SIGNED;&amp;#10;~ -- Id: A.5  function &amp;quot;+&amp;quot; ( L: UNSIGNED; R: NATURAL) return UNSIGNED;&amp;#10;~ -- Id: A.6  function &amp;quot;+&amp;quot; ( L: NATURAL; R: UNSIGNED) return UNSIGNED;&amp;#10;~ -- Id: A.7  function &amp;quot;+&amp;quot; ( L: INTEGER; R: SIGNED)   return SIGNED;&amp;#10;~ -- Id: A.8  function &amp;quot;+&amp;quot; ( L: SIGNED; R: INTEGER)   return SIGNED;&amp;#10;~ Example: addOut &amp;lt;= std_logic_vector (unsigned(addin1) + unsigned(addIn0) );&amp;#10;~  Uses A.3 function &amp;quot;+&amp;quot; ( L&amp;#44;R: UNSIGNED) return UNSIGNED&amp;#10;~  Adds two std_logic_vector (slv) signals. Convert (type cast) slv signals to unsigned type&amp;#44; perform +&amp;#44; and then type cast the unsigned result to std_logic_vector type&amp;#10;&amp;#10;If a line includes a std_logic_vector signal as an array index&amp;#44; convert the signal to an integer index using &amp;quot;ieee.numeric_std&amp;quot; package to_integer(unsigned()).&amp;#10;~ If using a std_logic_vector signal as an integer index&amp;#44; convert (type cast) the signal to unsigned type&amp;#44;&amp;#10;~ and the unsigned signal to integer type (TO_INTEGER function D.1) and use as integer array index&amp;#10;~ -- Id: D.1  function TO_INTEGER ( ARG: UNSIGNED) return NATURAL;&amp;#10;~ -- Id: D.2  function TO_INTEGER ( ARG: SIGNED) return INTEGER;&amp;#10;~ -- Id: D.3  function TO_UNSIGNED (  ARG&amp;#44;SIZE: NATURAL) return UNSIGNED;&amp;#10;~ -- Id: D.4  function TO_SIGNED ( ARG: INTEGER; SIZE: NATURAL) return SIGNED;&amp;#10;~ -- Id: D.5  function TO_UNSIGNED ( ARG: STD_LOGIC_VECTOR) return UNSIGNED;&amp;#10;~ -- Id: D.6  function TO_SIGNED ( ARG: STD_LOGIC_VECTOR) return SIGNED;&amp;#10;~ -- Id: D.7  function TO_STDLOGICVECTOR ( ARG: UNSIGNED) return STD_LOGIC_VECTOR;&amp;#10;~ -- Id: D.8  function TO_STDLOGICVECTOR ( ARG: SIGNED) return STD_LOGIC_VECTOR;&amp;#10;&amp;#10;Convert shift_left and shift_right function outputs to signal type std_logic_vector.&amp;#10;~ Bit shift handling&amp;#10;~ This assumes that the target signal type is std_logic_vector. If not so&amp;#44; remove or modify the above line.&amp;#10;Only use ieee.numeric_std package shift_left or shift_right functions&amp;#44; and do not use sra&amp;#44; srl&amp;#44; sll&amp;#44; shift_right_arithmetic functions&amp;#44; introduced in IEEE VHDL-2008&amp;#10;~ Self-explanatory&amp;#10;If a line includes a &amp;gt;&amp;gt;&amp;gt; shift right arithmetic operation&amp;#44; use ieee.numeric_std package shift_right function&amp;#44; assuming signed data.&amp;#10;~ Use &amp;gt;&amp;gt;&amp;gt; pseudo code operator for shift right arithmetic operation. VHDL functions require signed input signals.&amp;#10;&amp;#10;Use hexadecimal signal format where the number of bits in the assignment is a multiple of 4&amp;#44; extending the hex value to the exact width of the target signal.&amp;#10;Make assignment and equality check bit widths compatible.&amp;#10;~ Self-explanatory&amp;#10;&amp;#10;Leave all labels unchanged.&amp;#10;~ HDLGen-ChatGPT captures the labels for the design processes&amp;#44; concurrent statements and component instantiation.&amp;#10;~ Labels are used for browsing the design in the EDA tools.&amp;#10;&amp;#10;For each line containing &amp;apos;_c:&amp;apos; in the label&amp;#44; generate a concurrent VHDL statement&amp;#44; do not generate a process statement&amp;#44; do not remove the label&amp;#44; and remove any occurrence of &amp;apos;-- Default assignment&amp;apos;&amp;#10;&amp;#10;Remove all assignments in if or case statements which duplicate the default assignment.&amp;#10;Include null in others case statement if a default assignment is included in a case statement&amp;#10;~ HDLGen-ChatGPT &amp;apos;Architecture &amp;gt; process&amp;apos; menu uses the following menus and combinational process logic description approach&amp;#10;~ default signal assignment&amp;#10;~ non-default signal assignment&amp;#10;~ The default signal assignment is only required once. This prompt avoids ChatGPT including duplicates.&amp;#10;&amp;#10;For all case statements&amp;#44; include &amp;quot;when others =&amp;gt; null;&amp;quot; before every occurrence of an &amp;quot;end case&amp;quot; statement.&amp;#10;~ VHDL syntax requirement&amp;#10;&amp;#10;Within all VHDL processes&amp;#44; do not remove the line containing &amp;apos;-- Default assignment&amp;apos;&amp;#44; and place it immediately before the VHDL statements generated for lines containing prefix &amp;apos;--- &amp;apos;.&amp;#10;~ Avoids ChatGPT incorrectly re-ordering statements&amp;#44; and ensures the correct ordering of VHDL statements&amp;#44; provided in HDLGen-ChatGPT HDL template&amp;#10;&amp;#10;In assignments which include signals with one bit extension&amp;#44; e.g&amp;#44; (0 &amp;amp; CSUpr) or  (1 &amp;amp; CSUpr)&amp;#44; use single quotes around the single bit value 0 or 1 and do not use double quotes &amp;quot;&amp;quot;.&amp;#10;For example&amp;#44; generate (&amp;apos;0&amp;apos; &amp;amp; CSUpr) from VHDL (0 &amp;amp; CSUpr)&amp;#10;~ Extending a signal&amp;#10;~ Example: addOut &amp;lt;= std_logic_vector(unsigned(&amp;apos;0&amp;apos; &amp;amp; CSUpr) + unsigned(&amp;apos;0&amp;apos; &amp;amp; addInB)); where addOut signal is 6-bit std_logic_vector(5 downto 0)&amp;#44; CSRUpr / addInB signals are 5-bit std_logic_vector(4 downto 0)&amp;#10;&amp;#10;Do not remove any library statements&amp;#44; do not add any new library &amp;apos;use&amp;apos; statements&amp;#44; to avoid conflicts with the ieee.numeric_std package functions.&amp;#10;~ Self explanatory&amp;#10;&amp;#10;Only use VHDL which is support by the IEEE VHDL-1987 standard.&amp;#10;~ Not all Electronic Design Automation (EDA) tools support VHDL-2008&amp;#44; so stick with VHDL-1987 standard&amp;#10;&amp;#10;In all VHDL processes&amp;#44; replace each conditional when else statement with a case statement or an if statement&amp;#44; without removing any signal state check&amp;#44; and not including any assignments which duplicate the assignment labelled &amp;apos;-- Default assignment&amp;apos;&amp;#10;~ Conditional statements are supported in IEEE VHDL-2008 though not all EDA tools support VHDL-2008&amp;#44; so do not allow conditional statements&amp;#10;~ ChatGPT does not always follow this prompt&amp;#44; so it may be necessary to submit this prompt again&amp;#44; after the ChatGPT run.&amp;#10;&amp;#10;For signal which have a digit boundary width&amp;#44; use hexadecimal format in constant assignments&amp;#44; with &amp;apos;x&amp;apos; prefix before double quotation marks.</VHDLModel>
+				<VerilogModel>~ Notes START ===============&amp;#10;~ &amp;quot;~&amp;quot; is comment line prefix&amp;#10;&amp;#10;~ 1. HDLGen-ChatGPT builds the ChatGPT HDL model completion prompt.&amp;#10;~ The prompt includes the following sections&amp;#10;~ a) ChatGPT HDL model completion prompt header&amp;#44; instructing ChatGPT&amp;#10;~ The prompts included in this file have been developed following testing on a range or combinational&amp;#44; sequential and hierarchical designs.&amp;#10;~ Each prompt has an accompanying explanation (in a comment)&amp;#10;~ Prompts are included which request generate of specific code output&amp;#10;~ Prompts are included which request avoidance of generating specific code output&amp;#10;~ b) HDL model template&amp;#44; generated by HDLGen-ChatGPT.&amp;#10;&amp;#10;~ 2. The Verilog model template includes the following sections:&amp;#10;~ Title (creation date&amp;#44; component name&amp;#44; description&amp;#44; creator details&amp;#44; signal dictionary)&amp;#10;~ Verilog module declaration&amp;#44; describing input and output signals and their signal types&amp;#10;~ Verilog architecture&amp;#10;~ Internal signal declarations&amp;#10;~ Verilog always statements&amp;#44; possibly including logic pseudo code (marked with --- prefix) for ChatGPT Verilog generation&amp;#10;~ Verilog component instantiations&amp;#44; if the design is hierarchical&amp;#10;~ Verilog assign statements&amp;#44; possibly including logic pseudo code (marked with --- prefix) for ChatGPT Verilog generation&amp;#10;&amp;#10;~ 3. HDLGen-ChatGPT (https://github.com/fearghal1/HDLGen-ChatGPT)has been tested primarily using the free GPT-3.5&amp;#10;~ Later (subscription-based) GPT releases are expected to produce similar or better quality results&amp;#10;~ Note that ChatGPT does not always generate output exactly as expected&amp;#10;&amp;#10;~ 4. You can modify/edit this ChatGPT HDL model completion prompt header. If so&amp;#44; include explanatiom using the ~ comment prefix&amp;#10;&amp;#10;~ 5. Individual prompts (from this list&amp;#44; or new prompts) can be submitted as individual prompts&amp;#44; following a ChatGPT run&amp;#44; to refine the output&amp;#10;~ Examples:&amp;#10;~ Enter &amp;apos;continue&amp;apos; to continue incomplete output to a code box&amp;#10;~ Click the ChatGPT menu &amp;apos;&amp;gt; Continue generating&amp;apos; button if it appears&amp;#44; to continue incomplete output to a code box&amp;#10;~ Copy any prompt from this file and paste in the ChatGPT message box and click the arrow&amp;#10;~ Type a new prompt in the ChatGPT message box and click the arrow&amp;#10;~ Notes END&amp;#x9;===============&amp;#10;&amp;#10;~ Main prompt to ChatGPT&amp;#10;Complete the following Verilog model&amp;#44; and output in a single formatted code box.&amp;#10;&amp;#10;~ The next lines are auto-populated by HDLGen-ChatGPT&amp;#44; based on process and concurrent statements in the Verilog model template.&amp;#10;~ In HDLGen-ChatGPT &amp;apos;Generate &amp;gt; Edit ChatGPT Prompt Header&amp;apos; menu&amp;#44; uncomment one of the following lines to output a specific selected process or concurrent statement.&amp;#10;~***Reserved for processes***&amp;#10;~***Reserved for concurrent statements***&amp;#10;&amp;#10;For each line between // Title section start and // Title section end&amp;#44; improve formatting of the text.&amp;#10;&amp;#10;Do not include input or output keywords in the module declaration&amp;#10;&amp;#10;For each line containing the prefix &amp;apos;///&amp;apos;&amp;#44; generate Verilog code describing the logic&amp;#44; applying the following rules.&amp;#10;~ Translate model combination logic pseudo code lines which include the &amp;apos;///&amp;apos; prefix to syntactically-correct HDL.&amp;#10;Remove the &amp;apos;/// &amp;apos;  prefix from the line.&amp;#10;~ Remove the /// after processing.&amp;#10;&amp;#10;Leave all labels unchanged.&amp;#10;~ Labels are used for browsing the design in the EDA tools.&amp;#10;&amp;#10;In initial statements&amp;#44; place the Verilog line containing &amp;apos;// Default assignment&amp;apos;&amp;#44; unchanged&amp;#44; and immediately before the Verilog logic generated for lines containing prefix &amp;apos;///&amp;apos;.&amp;#10;~ self-explanatory&amp;#10;&amp;#10;Do not include an initial statement for a signal&amp;#44; if an assign statement is included in the Verilog model template.&amp;#10;~ For each assign statement&amp;#44; generate a Verilog assign statement&amp;#44; remove &amp;apos;// Default assignment&amp;apos; if it exists.&amp;#10;&amp;#10;In VERILOG initial statements&amp;#44; do not remove the line containing suffix &amp;apos;// Default assignment&amp;apos;&amp;#44; and place it immediately before the VERILOG statements generated for lines containing prefix &amp;apos;/// &amp;apos;.&amp;#10;Place the line containing suffix &amp;apos;// Default assignment&amp;apos; immediately before the VERILOG if statement in lines containing prefix &amp;apos;///&amp;apos;.&amp;#10;&amp;#10;Make assignment and equality check bit widths compatible.&amp;#10;&amp;#10;Only use Verilog which is supported by the Verilog-1995 (IEEE Standard 1364-1995) standard.&amp;#10;&amp;#10;Keep all { and } characters in the generated Verilog&amp;#10;&amp;#10;Keep case assignments separate&amp;#44; as specified in the ChatGPT prompt.&amp;#10;&amp;#10;For &amp;lt;&amp;lt;&amp;lt; shift right arithmetic assignment&amp;#44; apply the shift operation on the signed signal value&amp;#44; using $signed()&amp;#10;&amp;#10;Remove all lines which contain default:</VerilogModel>
+			</commands>
+		</chatgpt>
+	</hdlDesign>
+</HDLGen>

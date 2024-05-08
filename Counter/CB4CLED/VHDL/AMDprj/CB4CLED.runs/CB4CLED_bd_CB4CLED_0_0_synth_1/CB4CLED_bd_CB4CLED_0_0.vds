@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Mar 29 10:23:11 2024
+# Process ID: 10824
+# Current directory: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/AMDprj/CB4CLED.runs/CB4CLED_bd_CB4CLED_0_0_synth_1
+# Command line: vivado.exe -log CB4CLED_bd_CB4CLED_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CB4CLED_bd_CB4CLED_0_0.tcl
+# Log file: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/AMDprj/CB4CLED.runs/CB4CLED_bd_CB4CLED_0_0_synth_1/CB4CLED_bd_CB4CLED_0_0.vds
+# Journal file: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/AMDprj/CB4CLED.runs/CB4CLED_bd_CB4CLED_0_0_synth_1\vivado.jou
+# Running On: DESKTOP-N7GT3RK, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 10, Host memory: 34029 MB
+#-----------------------------------------------------------
+source CB4CLED_bd_CB4CLED_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 453.770 ; gain = 184.816
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/AMDprj/CB4CLED.cache/ip 
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: CB4CLED_bd_CB4CLED_0_0
+Command: synth_design -top CB4CLED_bd_CB4CLED_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 17924
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1324.547 ; gain = 438.566
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-8892] 'int_ns' is already declared in this region [C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/model/CB4CLED.vhd:63]
+ERROR: [Synth 8-8892] 'int_cs' is already declared in this region [C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/model/CB4CLED.vhd:64]
+INFO: [Synth 8-11252] unit 'cb4cled' is ignored due to previous errors [C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/model/CB4CLED.vhd:75]
+INFO: [Synth 8-10443] VHDL file 'C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/model/CB4CLED.vhd' is ignored due to errors
+ERROR: [Synth 8-439] module 'CB4CLED_bd_CB4CLED_0_0' not found
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1435.250 ; gain = 549.270
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 1 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 29 10:23:44 2024...

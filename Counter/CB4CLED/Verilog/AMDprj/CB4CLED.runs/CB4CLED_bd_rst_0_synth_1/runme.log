@@ -1,0 +1,26 @@
+
+*** Running vivado
+    with args -log CB4CLED_bd_rst_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source CB4CLED_bd_rst_0.tcl
+
+
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source CB4CLED_bd_rst_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 454.312 ; gain = 185.219
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: CB4CLED_bd_rst_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 114150e861f179c3 to dir: C:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.runs/CB4CLED_bd_rst_0_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.cache/ip/2023.2/1/1/114150e861f179c3/CB4CLED_bd_ce_0.dcp to C:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.runs/CB4CLED_bd_rst_0_synth_1/CB4CLED_bd_rst_0.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.cache/ip/2023.2/1/1/114150e861f179c3/CB4CLED_bd_ce_0_sim_netlist.v to C:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.runs/CB4CLED_bd_rst_0_synth_1/CB4CLED_bd_rst_0_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.cache/ip/2023.2/1/1/114150e861f179c3/CB4CLED_bd_ce_0_sim_netlist.vhdl to C:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.runs/CB4CLED_bd_rst_0_synth_1/CB4CLED_bd_rst_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.cache/ip/2023.2/1/1/114150e861f179c3/CB4CLED_bd_ce_0_stub.v to C:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.runs/CB4CLED_bd_rst_0_synth_1/CB4CLED_bd_rst_0_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.cache/ip/2023.2/1/1/114150e861f179c3/CB4CLED_bd_ce_0_stub.vhdl to C:/videodemo/Sequential/Sequential/Counters/CB4CLED/Verilog/AMDprj/CB4CLED.runs/CB4CLED_bd_rst_0_synth_1/CB4CLED_bd_rst_0_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP CB4CLED_bd_rst_0, cache-ID = 114150e861f179c3.
+INFO: [Common 17-206] Exiting Vivado at Wed May  8 16:17:24 2024...

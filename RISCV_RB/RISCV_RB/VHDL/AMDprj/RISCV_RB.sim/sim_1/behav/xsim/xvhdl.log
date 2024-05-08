@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/Package/MainPackage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/model/RISCV_RB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RISCV_RB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/videodemo/HDLGen-ChatGPT/User_Projects/RISCV_RB/RISCV_RB/VHDL/testbench/RISCV_RB_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RISCV_RB_TB'

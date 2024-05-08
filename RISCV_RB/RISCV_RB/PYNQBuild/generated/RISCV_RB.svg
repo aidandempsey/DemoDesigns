@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 240 254"
+     preserveAspectRatio="xMidYMid meet"
+     version="1.1"
+     baseProfile="full"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:ev="http://www.w3.org/2001/xml-events"
+     xml:space="preserve">
+<title>image_bd_imp</title>
+<desc>Nlview schematic (SVG)</desc>
+<clipPath id="clippingbbox">
+<rect x="0" y="0" width="240" height="254" />
+</clipPath>
+<g stroke="#102235"
+   stroke-width="1"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-miterlimit="4"
+   stroke-dasharray="none"
+   stroke-dashoffset="0"
+   fill="none"
+   font-family="Helvetica"
+   font-style="normal"
+   font-size="12"
+   writing-mode="lr-tb"
+   cursor="crosshair"
+   clip-path="url(#clippingbbox)">
+<path d="M0 0h240v255h-240z" stroke="none" fill="white" />
+<path d="M27 29h186l3 1l2 1l1 2l1 3v182l-1 3l-1 2l-2 1l-3 1h-186l-3 -1l-2 -1l-1 -2l-1 -3v-182l1 -3l1 -2l2 -1z" stroke="none" fill="#edf6fe" />
+<text x="120" y="27" fill="black" stroke-width="0" text-anchor="middle" dy="-1.6">RISCV_RB_0</text>
+<text x="120" y="227" fill="#41619f" stroke-width="0" text-anchor="middle" dy="9.6">RISCV_RB_v1_0</text>
+<g stroke="black" stroke-width="3">
+<path d="M10 57h10" />
+<text x="22" y="57" fill="black" stroke-width="0" font-size="10" dy="3.66667">RWr</text>
+</g>
+<g stroke="black" stroke-width="5">
+<path d="M10 77h10" />
+<text x="22" y="77" fill="black" stroke-width="0" font-size="10" dy="3.66667">rd[4:0]</text>
+<path d="M10 97h10" />
+<text x="22" y="97" fill="black" stroke-width="0" font-size="10" dy="3.66667">rs1[4:0]</text>
+<path d="M10 117h10" />
+<text x="22" y="117" fill="black" stroke-width="0" font-size="10" dy="3.66667">rs2[4:0]</text>
+<path d="M230 117h-10" />
+<text x="218" y="117" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.66667">rs1D[31:0]</text>
+<path d="M230 137h-10" />
+<text x="218" y="137" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.66667">rs2D[31:0]</text>
+<path d="M10 137h10" />
+<text x="22" y="137" fill="black" stroke-width="0" font-size="10" dy="3.66667">WBDat[31:0]</text>
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M10 157h10" />
+<text x="22" y="157" fill="black" stroke-width="0" font-size="10" dy="3.66667">ce</text>
+<path d="M10 177h10" />
+<text x="22" y="177" fill="black" stroke-width="0" font-size="10" dy="3.66667">clk</text>
+<circle cx="17" cy="197" r="3" />
+<path d="M10 197h4" />
+<text x="22" y="197" fill="black" stroke-width="0" font-size="10" dy="3.66667">rst</text>
+</g>
+<g stroke="#41619f">
+<path d="M27 29h186" />
+<path d="M213,29 A6.83537,6.83537 1.61957 0,1 220,36" />
+<path d="M220 36v182" />
+<path d="M220,218 A6.83537,6.83537 1.61957 0,1 213,225" />
+<path d="M213 225h-186" />
+<path d="M27,225 A6.83537,6.83537 1.61957 0,1 20,218" />
+<path d="M20 218v-182" />
+<path d="M20,36 A6.83537,6.83537 1.61957 0,1 27,29" />
+</g>
+</g>
+</svg>

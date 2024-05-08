@@ -1,0 +1,33 @@
+Time resolution is 1 ps
+Note: %N Simulation start, time = 0 ps
+Time: 0 ps  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Note: Assert and toggle rst
+Time: 0 ps  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 1 count mismatch
+Time: 64 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 2 count mismatch
+Time: 104 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 2 TC mismatch
+Time: 104 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 2 ceo mismatch
+Time: 104 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 3 count mismatch
+Time: 124 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 3 TC mismatch
+Time: 124 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 4 count mismatch
+Time: 164 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 5 TC mismatch
+Time: 184 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 5 ceo mismatch
+Time: 184 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 6 TC mismatch
+Time: 204 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 7 count mismatch
+Time: 224 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 8 TC mismatch
+Time: 524 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Warning: TestNo 8 ceo mismatch
+Time: 524 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd
+Note: %N Simulation end, time = 524000 ps
+Time: 524 ns  Iteration: 0  Process: /CB4CLED_TB/stim_p  File: C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/testbench/CB4CLED_TB.vhd

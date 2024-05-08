@@ -1,0 +1,33 @@
+Signals	Mode	Width	Radix	Test 1	Test 2
+rst	in	1	binary	0	0
+load	in	1	binary	0	0
+loadDat	in	4	hex	0	0
+ce	in	1	binary	0	0
+up	in	1	binary	0	0
+count	out	4	hex	0	0
+TC	out	1	binary	0	0
+ceo	out	1	binary	0	0
+Delay	-	-	-	1	1
+TestNo	-	-	-	1	2
+Note	-	-	-	Test 1	Test 2
+
+
+
+inputs         load loadDat ce  up 				 
+outputs                             count TC  ceo 
+               1'b  4'b     1'b 1'b 4'b   1'b 1'b
+TestNo delay                                      Note
+1      1       1    1110    0   0   1110  0   0   Synchronously load count 
+2      1       0    0101    0   1   1110  0   0   No change since ce deasserted 
+3      1       0    0101    1   1   1111  1   1   counter synchronously increments to 0xF (0d15, 0b1111), terminal count asserted, chip enabl;e output asserted 
+4      0.1     0    0101    0   1   1111  1   0   ceo unregistered chip enable output signal deasserts, since ce deasserted
+5      0.1     0    0101    0   1   1111  1   1   ceo reasserts 
+6      1.8     0    0101    1   1   0001  0   0   simulate across two active clk edges. count increments through 0 to 1
+7      1       0    0101    1   0   0000  1   1   count down to 0. TC and ceo assert 
+8      0.1     0    0101    0   0   0000  1   0   ceo deasserts, since ce deasserted
+9      0.1     0    0101    1   0   0000  1   1   ceo reasserts 
+10     0.8     0    0101    1   0   1111  0   0   simulate to active clk edge. count decrements to 0xf (0d15, 0b1111) 
+11     0.1     0    0101    1   1   1111  1   1   TC and ceo unregistered signals assert, since up asserted
+12     0.1     0    0101    1   0   1111  1   1   TC and ceo deassert, since up deasserted
+13     13.8    0    0101    1   0   0001  0   0   count down to 1     
+14     5       0    0101    1   1   0110  1   1   count up to 6

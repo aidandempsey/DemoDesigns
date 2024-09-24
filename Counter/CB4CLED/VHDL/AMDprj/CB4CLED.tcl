@@ -13,14 +13,14 @@
 
         # cmd 
 
-        # cd {C:\2023\HDLGenTop\testFeb24\hdlgenFeb24\HDLGen-ChatGPT\User_Projects_share\Sequential\Counters\CB4CLED} 
+        # cd {C:\repo\HDLGen-ChatGPT\User_Projects\Counter\CB4CLED} 
 
-        # $vivado_bat_path -source C:\2023\HDLGenTop\testFeb24\hdlgenFeb24\HDLGen-ChatGPT\User_Projects_share\Sequential\Counters\CB4CLED\VHDL\AMDprj\CB4CLED.tcl 
+        # $vivado_bat_path -source C:\repo\HDLGen-ChatGPT\User_Projects\Counter\CB4CLED\VHDL\AMDprj\CB4CLED.tcl 
 
 
         # Vivado tcl file CB4CLED.tcl, created in AMDprj folder 
 
-        cd {C:\2023\HDLGenTop\testFeb24\hdlgenFeb24\HDLGen-ChatGPT\User_Projects_share\Sequential\Counters\CB4CLED} 
+        cd {C:\repo\HDLGen-ChatGPT\User_Projects\Counter\CB4CLED} 
 
         # Close_project  Not required. Will advise that Vivado sessions should be closed. 
 
@@ -31,7 +31,7 @@
         set_property target_language VHDL [current_project]
 
         add_files -norecurse  ./VHDL/model/CB4CLED.vhd
-add_files -norecurse  C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Package/MainPackage.vhd
+add_files -norecurse  C:/repo/HDLGen-ChatGPT/User_Projects/Counter/Package/MainPackage.vhd
 
 
         update_compile_order -fileset sources_1

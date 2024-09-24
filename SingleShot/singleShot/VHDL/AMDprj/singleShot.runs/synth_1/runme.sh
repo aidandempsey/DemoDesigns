@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/videodemo/FiniteStateMachines_FSMs/singleShot/VHDL/AMDprj/singleShot.runs/synth_1'
+HD_PWD='C:/repo/HDLGen-ChatGPT/User_Projects/SingleShot/singleShot/VHDL/AMDprj/singleShot.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log singleShot_bd_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source singleShot_bd_wrapper.tcl
+EAStep vivado -log singleShot.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source singleShot.tcl

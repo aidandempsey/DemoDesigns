@@ -1,17 +1,17 @@
 <?xml version="1.0" ?>
 <HDLGen>
 	<genFolder>
-		<vhdl_folder>RISCV_ALU/VHDL/model</vhdl_folder>
-		<vhdl_folder>RISCV_ALU/VHDL/testbench</vhdl_folder>
-		<vhdl_folder>RISCV_ALU/VHDL/ChatGPT</vhdl_folder>
-		<vhdl_folder>RISCV_ALU/VHDL/ChatGPT/Backups</vhdl_folder>
-		<vhdl_folder>RISCV_ALU/VHDL/AMDprj</vhdl_folder>
+		<verilog_folder>RISCV_ALU/Verilog/model</verilog_folder>
+		<verilog_folder>RISCV_ALU/Verilog/testbench</verilog_folder>
+		<verilog_folder>RISCV_ALU/Verilog/ChatGPT</verilog_folder>
+		<verilog_folder>RISCV_ALU/Verilog/ChatGPT/Backups</verilog_folder>
+		<verilog_folder>RISCV_ALU/Verilog/AMDprj</verilog_folder>
 	</genFolder>
 	<projectManager>
 		<settings>
 			<name>RISCV_ALU</name>
-			<environment>C:\demo\RISCV</environment>
-			<location>C:\demo\RISCV\RISCV_ALU</location>
+			<environment>C:\repo\HDLGen-ChatGPT\User_Projects\RISCV_ALU</environment>
+			<location>C:\repo\HDLGen-ChatGPT\User_Projects\RISCV_ALU\RISCV_ALU</location>
 			<info>None</info>
 		</settings>
 		<EDA>
@@ -23,7 +23,7 @@
 		</EDA>
 		<HDL>
 			<language>
-				<name>VHDL</name>
+				<name>Verilog</name>
 			</language>
 		</HDL>
 	</projectManager>
@@ -35,7 +35,7 @@
 			<authors>Fearghal Morgan</authors>
 			<company>University of Galway</company>
 			<email>fearghal.morgan@universityofgalway.ie</email>
-			<date>17/04/2024</date>
+			<date>24/09/2024</date>
 		</header>
 		<clkAndRst/>
 		<entityIOPorts>

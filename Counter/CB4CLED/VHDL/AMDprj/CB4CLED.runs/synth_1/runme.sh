@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/AMDprj/CB4CLED.runs/synth_1'
+HD_PWD='C:/repo/HDLGen-ChatGPT/User_Projects/Counter/CB4CLED/VHDL/AMDprj/CB4CLED.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log CB4CLED_bd_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source CB4CLED_bd_wrapper.tcl
+EAStep vivado -log CB4CLED.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source CB4CLED.tcl

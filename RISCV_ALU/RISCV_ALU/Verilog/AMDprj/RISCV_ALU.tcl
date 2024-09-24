@@ -13,14 +13,14 @@
 
         # cmd 
 
-        # cd {C:/2023/HDLGenTop/myFiles/HDLGen-ChatGPT/User_Projects/RISCV/RISCV_ALU} 
+        # cd {C:\repo\HDLGen-ChatGPT\User_Projects\RISCV_ALU\RISCV_ALU} 
 
-        # $vivado_bat_path -source C:/2023/HDLGenTop/myFiles/HDLGen-ChatGPT/User_Projects/RISCV/RISCV_ALU/Verilog/AMDPrj/RISCV_ALU.tcl 
+        # $vivado_bat_path -source C:\repo\HDLGen-ChatGPT\User_Projects\RISCV_ALU\RISCV_ALU\Verilog\AMDprj\RISCV_ALU.tcl 
 
 
         # Vivado tcl file RISCV_ALU.tcl, created in AMDprj folder 
 
-        cd {C:/2023/HDLGenTop/myFiles/HDLGen-ChatGPT/User_Projects/RISCV/RISCV_ALU} 
+        cd {C:\repo\HDLGen-ChatGPT\User_Projects\RISCV_ALU\RISCV_ALU} 
 
         # Close_project  Not required. Will advise that Vivado sessions should be closed. 
 
@@ -53,7 +53,7 @@
 
         set_property SOURCE_SET sources_1 [get_filesets sim_1]
 
-        add_files -fileset sim_1 -norecurse ./Verilog/AMDPrj/RISCV_ALU_TB_behav.wcfg
+        add_files -fileset sim_1 -norecurse ./Verilog/AMDprj/RISCV_ALU_TB_behav.wcfg
 
         # save_wave_config {./Verilog/AMDprj/RISCV_ALU_TB_behav.wcfg}
 

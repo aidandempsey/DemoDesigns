@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Apr  3 11:23:19 2024
-# Process ID: 6068
-# Current directory: C:/demo/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1
-# Command line: vivado.exe -log RISCV_ALU_bd_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCV_ALU_bd_wrapper.tcl
-# Log file: C:/demo/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1/RISCV_ALU_bd_wrapper.vds
-# Journal file: C:/demo/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1\vivado.jou
-# Running On: DESKTOP-FC0OD32, OS: Windows, CPU Frequency: 1800 MHz, CPU Physical cores: 4, Host memory: 12689 MB
+# Start of session at: Tue Sep 24 13:17:03 2024
+# Process ID: 16268
+# Current directory: C:/repo/HDLGen-ChatGPT/User_Projects/RISCV_ALU/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1
+# Command line: vivado.exe -log RISCV_ALU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCV_ALU.tcl
+# Log file: C:/repo/HDLGen-ChatGPT/User_Projects/RISCV_ALU/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1/RISCV_ALU.vds
+# Journal file: C:/repo/HDLGen-ChatGPT/User_Projects/RISCV_ALU/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1\vivado.jou
+# Running On: DESKTOP-IJP443O, OS: Windows, CPU Frequency: 1996 MHz, CPU Physical cores: 8, Host memory: 16522 MB
 #-----------------------------------------------------------
-source RISCV_ALU_bd_wrapper.tcl -notrace
+source RISCV_ALU.tcl -notrace

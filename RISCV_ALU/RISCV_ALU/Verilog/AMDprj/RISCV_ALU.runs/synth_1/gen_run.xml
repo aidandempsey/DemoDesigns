@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1696924899">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1727180453">
   <File Type="PA-TCL" Name="RISCV_ALU.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="RISCV_ALU_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="RISCV_ALU_reports.tcl"/>
   <File Type="RDS-RDS" Name="RISCV_ALU.vds"/>
   <File Type="RDS-UTIL" Name="RISCV_ALU_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="RISCV_ALU_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="RISCV_ALU.dcp"/>
-  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+  <File Type="VDS-TIMINGSUMMARY" Name="RISCV_ALU_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="RISCV_ALU_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../model/RISCV_ALU.v">
       <FileInfo>
@@ -21,20 +24,22 @@
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
-  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design">
       <Option Id="MoreOptsStr"><![CDATA[-no_iobuf]]></Option>
     </Step>

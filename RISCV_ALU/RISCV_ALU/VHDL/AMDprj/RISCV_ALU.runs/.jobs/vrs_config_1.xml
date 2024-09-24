@@ -1,42 +1,6 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="0">
-	<Run Id="RISCV_ALU_bd_selALUOp_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_selALUOp_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="RISCV_ALU_bd_auto_pc_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="RISCV_ALU_bd_ALUOut_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_ALUOut_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="RISCV_ALU_bd_xbar_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="RISCV_ALU_bd_processing_system7_0_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="RISCV_ALU_bd_RISCV_ALU_0_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_RISCV_ALU_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="RISCV_ALU_bd_A_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_A_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="RISCV_ALU_bd_proc_sys_reset_0_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_proc_sys_reset_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="RISCV_ALU_bd_B_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_B_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
-		<Parent Id="RISCV_ALU_bd_A_0_synth_1"/>
-	</Run>
-	<Run Id="RISCV_ALU_bd_branch_0_synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/RISCV_ALU_bd_branch_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="synth_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
-		<Parent Id="RISCV_ALU_bd_selALUOp_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_auto_pc_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_ALUOut_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_xbar_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_processing_system7_0_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_RISCV_ALU_0_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_A_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_proc_sys_reset_0_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_B_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_branch_0_synth_1"/>
-	</Run>
-	<Run Id="impl_1" LaunchDir="C:/2024/User_Projects/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
-		<Parent Id="synth_1"/>
-		<Parent Id="RISCV_ALU_bd_selALUOp_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_auto_pc_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_ALUOut_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_xbar_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_processing_system7_0_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_RISCV_ALU_0_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_A_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_proc_sys_reset_0_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_B_0_synth_1"/>
-		<Parent Id="RISCV_ALU_bd_branch_0_synth_1"/>
-	</Run>
+	<Run Id="synth_1" LaunchDir="C:/repo/HDLGen-ChatGPT/User_Projects/RISCV_ALU/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Parameters>
 		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
 		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>

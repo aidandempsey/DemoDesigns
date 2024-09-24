@@ -13,14 +13,14 @@
 
         # cmd 
 
-        # cd {C:\videodemo\HDLGen-ChatGPT\User_Projects\Mux2_1} 
+        # cd {C:\repo\HDLGen-ChatGPT\User_Projects\Multiplexer\Mux2_1} 
 
-        # $vivado_bat_path -source C:\videodemo\HDLGen-ChatGPT\User_Projects\Mux2_1\Verilog\AMDprj\Mux2_1.tcl 
+        # $vivado_bat_path -source C:\repo\HDLGen-ChatGPT\User_Projects\Multiplexer\Mux2_1\Verilog\AMDprj\Mux2_1.tcl 
 
 
         # Vivado tcl file Mux2_1.tcl, created in AMDprj folder 
 
-        cd {C:\videodemo\HDLGen-ChatGPT\User_Projects\Mux2_1} 
+        cd {C:\repo\HDLGen-ChatGPT\User_Projects\Multiplexer\Mux2_1} 
 
         # Close_project  Not required. Will advise that Vivado sessions should be closed. 
 

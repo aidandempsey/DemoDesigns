@@ -1,1 +1,0 @@
---incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "CB4CLED_TB_behav" "xil_defaultlib.CB4CLED_TB" "xil_defaultlib.glbl" -log "elaborate.log" 

@@ -13,14 +13,14 @@
 
         # cmd 
 
-        # cd {C:\2024\User_Projects\RISCV\RISCV_ALU} 
+        # cd {C:\repo\HDLGen-ChatGPT\User_Projects\RISCV_ALU\RISCV_ALU} 
 
-        # $vivado_bat_path -source C:\2024\User_Projects\RISCV\RISCV_ALU\VHDL\AMDprj\RISCV_ALU.tcl 
+        # $vivado_bat_path -source C:\repo\HDLGen-ChatGPT\User_Projects\RISCV_ALU\RISCV_ALU\VHDL\AMDprj\RISCV_ALU.tcl 
 
 
         # Vivado tcl file RISCV_ALU.tcl, created in AMDprj folder 
 
-        cd {C:\2024\User_Projects\RISCV\RISCV_ALU} 
+        cd {C:\repo\HDLGen-ChatGPT\User_Projects\RISCV_ALU\RISCV_ALU} 
 
         # Close_project  Not required. Will advise that Vivado sessions should be closed. 
 
@@ -31,7 +31,7 @@
         set_property target_language VHDL [current_project]
 
         add_files -norecurse  ./VHDL/model/RISCV_ALU.vhd
-add_files -norecurse  C:/2024/User_Projects/RISCV/Package/MainPackage.vhd
+add_files -norecurse  C:/repo/HDLGen-ChatGPT/User_Projects/RISCV_ALU/Package/MainPackage.vhd
 
 
         update_compile_order -fileset sources_1

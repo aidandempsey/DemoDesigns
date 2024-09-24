@@ -40,16 +40,6 @@
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="isExpanded"></obj_property>
 
-    <wvobject fp_name="/RISCV_RB_TB/UUT/clk" type="logic">
-        <obj_property name="ElementShortName">clk</obj_property>
-        <obj_property name="ObjectShortName">clk</obj_property>
-    </wvobject>
-
-    <wvobject fp_name="/RISCV_RB_TB/UUT/rst" type="logic">
-        <obj_property name="ElementShortName">rst</obj_property>
-        <obj_property name="ObjectShortName">rst</obj_property>
-    </wvobject>
-
     <wvobject fp_name="/RISCV_RB_TB/UUT/RWr" type="logic">
         <obj_property name="ElementShortName">RWr</obj_property>
         <obj_property name="ObjectShortName">RWr</obj_property>
@@ -88,6 +78,16 @@
     <wvobject fp_name="/RISCV_RB_TB/UUT/ce" type="logic">
         <obj_property name="ElementShortName">ce</obj_property>
         <obj_property name="ObjectShortName">ce</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/RISCV_RB_TB/UUT/clk" type="logic">
+        <obj_property name="ElementShortName">clk</obj_property>
+        <obj_property name="ObjectShortName">clk</obj_property>
+    </wvobject>
+
+    <wvobject fp_name="/RISCV_RB_TB/UUT/rst" type="logic">
+        <obj_property name="ElementShortName">rst</obj_property>
+        <obj_property name="ObjectShortName">rst</obj_property>
     </wvobject>
 
     </wvobject>

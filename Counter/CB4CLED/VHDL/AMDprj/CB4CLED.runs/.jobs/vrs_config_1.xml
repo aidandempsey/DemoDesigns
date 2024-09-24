@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="0">
-	<Run Id="synth_1" LaunchDir="C:/2023/HDLGenTop/testFeb24/hdlgenFeb24/HDLGen-ChatGPT/User_Projects_share/Sequential/Counters/CB4CLED/VHDL/AMDprj/CB4CLED.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/repo/HDLGen-ChatGPT/User_Projects/Counter/CB4CLED/VHDL/AMDprj/CB4CLED.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Parameters>
 		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
 		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>

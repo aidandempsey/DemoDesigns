@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1715168869">
-  <File Type="PA-TCL" Name="RISCV_RB_bd_wrapper.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="RISCV_RB_bd_wrapper_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="RISCV_RB_bd_wrapper_reports.tcl"/>
-  <File Type="RDS-RDS" Name="RISCV_RB_bd_wrapper.vds"/>
-  <File Type="RDS-UTIL" Name="RISCV_RB_bd_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="RISCV_RB_bd_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="RISCV_RB_bd_wrapper.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="RISCV_RB_bd_wrapper_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="RISCV_RB_bd_wrapper_timing_summary_synth.pb"/>
-  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PSRCDIR/sources_1">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1727180671">
+  <File Type="PA-TCL" Name="RISCV_RB.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="RISCV_RB_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="RISCV_RB_reports.tcl"/>
+  <File Type="RDS-RDS" Name="RISCV_RB.vds"/>
+  <File Type="RDS-UTIL" Name="RISCV_RB_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="RISCV_RB_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="RISCV_RB.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="RISCV_RB_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="RISCV_RB_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../../Package/MainPackage.vhd">
       <FileInfo>
@@ -23,61 +23,30 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/RISCV_RB_bd/RISCV_RB_bd.bd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/bd/RISCV_RB_bd/hdl/RISCV_RB_bd_wrapper.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="RISCV_RB_bd_wrapper"/>
+      <Option Name="TopModule" Val="RISCV_RB"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PSRCDIR/constrs_1">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PSRCDIR/constrs_1/imports/generated/physical_constr.xdc">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../PYNQBuild/generated/physical_constr.xdc"/>
-        <Attr Name="ImportTime" Val="1715168752"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
-  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PSRCDIR/utils_1">
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
-    <Step Id="synth_design"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design">
+      <Option Id="MoreOptsStr"><![CDATA[-no_iobuf]]></Option>
+    </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_rs1D_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_rs1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_rd_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_ce_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_clk_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_RISCV_RB_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_RWr_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_rs2_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_rs2D_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_WBDat_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_proc_sys_reset_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_rst_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISCV_RB_bd_xbar_0"/>
 </GenRun>

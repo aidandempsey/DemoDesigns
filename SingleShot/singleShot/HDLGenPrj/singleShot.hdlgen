@@ -1,17 +1,17 @@
 <?xml version="1.0" ?>
 <HDLGen>
 	<genFolder>
-		<vhdl_folder>singleShot/VHDL/model</vhdl_folder>
-		<vhdl_folder>singleShot/VHDL/testbench</vhdl_folder>
-		<vhdl_folder>singleShot/VHDL/ChatGPT</vhdl_folder>
-		<vhdl_folder>singleShot/VHDL/ChatGPT/Backups</vhdl_folder>
-		<vhdl_folder>singleShot/VHDL/AMDprj</vhdl_folder>
+		<verilog_folder>singleShot/Verilog/model</verilog_folder>
+		<verilog_folder>singleShot/Verilog/testbench</verilog_folder>
+		<verilog_folder>singleShot/Verilog/ChatGPT</verilog_folder>
+		<verilog_folder>singleShot/Verilog/ChatGPT/Backups</verilog_folder>
+		<verilog_folder>singleShot/Verilog/AMDprj</verilog_folder>
 	</genFolder>
 	<projectManager>
 		<settings>
 			<name>singleShot</name>
-			<environment>C:\videodemo\FiniteStateMachines_FSMs</environment>
-			<location>C:\videodemo\FiniteStateMachines_FSMs\singleShot</location>
+			<environment>C:\repo\HDLGen-ChatGPT\User_Projects\SingleShot</environment>
+			<location>C:\repo\HDLGen-ChatGPT\User_Projects\SingleShot\singleShot</location>
 			<info>None</info>
 		</settings>
 		<EDA>
@@ -23,7 +23,7 @@
 		</EDA>
 		<HDL>
 			<language>
-				<name>VHDL</name>
+				<name>Verilog</name>
 			</language>
 		</HDL>
 	</projectManager>
@@ -35,7 +35,7 @@
 			<authors>Fearghal Morgan</authors>
 			<company>University of Galway</company>
 			<email>fearghal.morgan@universityofgalway.ie</email>
-			<date>08/05/2024</date>
+			<date>24/09/2024</date>
 		</header>
 		<clkAndRst>
 			<clkAndRst>

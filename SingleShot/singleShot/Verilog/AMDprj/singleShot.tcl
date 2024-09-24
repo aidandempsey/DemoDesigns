@@ -13,32 +13,32 @@
 
         # cmd 
 
-        # cd {C:/2023/vicilogic/HDLGenTop/HDLGen_V1906/User_Projects/sequential/FiniteStateMachines_FSMs/singleShot} 
+        # cd {C:\repo\HDLGen-ChatGPT\User_Projects\SingleShot\singleShot} 
 
-        # $vivado_bat_path -source C:/2023/vicilogic/HDLGenTop/HDLGen_V1906/User_Projects/sequential/FiniteStateMachines_FSMs/singleShot/Verilog/AMDPrj/singleShot.tcl 
+        # $vivado_bat_path -source C:\repo\HDLGen-ChatGPT\User_Projects\SingleShot\singleShot\Verilog\AMDprj\singleShot.tcl 
 
 
         # Vivado tcl file singleShot.tcl, created in AMDprj folder 
 
-        cd {C:/2023/vicilogic/HDLGenTop/HDLGen_V1906/User_Projects/sequential/FiniteStateMachines_FSMs/singleShot} 
+        cd {C:\repo\HDLGen-ChatGPT\User_Projects\SingleShot\singleShot} 
 
         # Close_project  Not required. Will advise that Vivado sessions should be closed. 
 
         start_gui
 
-        create_project  singleShot  ./VERiLOG/AMDprj -part xc7z020clg400-1 -force
+        create_project  singleShot  ./Verilog/AMDprj -part xc7z020clg400-1 -force
 
-        set_property target_language VERiLOG [current_project]
+        set_property target_language Verilog [current_project]
 
-        add_files -norecurse  ./VERiLOG/model/singleShot.v
-add_files -norecurse  C:/2023/vicilogic/HDLGenTop/HDLGen_V1006/User_Projects/Package/mainPackage.vhd
+        add_files -norecurse  ./Verilog/model/singleShot.v
+
 
 
         update_compile_order -fileset sources_1
 
         set_property SOURCE_SET sources_1 [get_filesets sim_1]
 
-        add_files -fileset sim_1 -norecurse ./VERiLOG/testbench/singleShot_TB.v
+        add_files -fileset sim_1 -norecurse ./Verilog/testbench/singleShot_TB.v
 
         update_compile_order -fileset sim_1
 
@@ -53,8 +53,8 @@ add_files -norecurse  C:/2023/vicilogic/HDLGenTop/HDLGen_V1006/User_Projects/Pac
 
         set_property SOURCE_SET sources_1 [get_filesets sim_1]
 
-        add_files -fileset sim_1 -norecurse ./VERiLOG/AMDPrj/singleShot_TB_behav.wcfg
+        add_files -fileset sim_1 -norecurse ./Verilog/AMDprj/singleShot_TB_behav.wcfg
 
-        # save_wave_config {./VERiLOG/AMDprj/singleShot_TB_behav.wcfg}
+        # save_wave_config {./Verilog/AMDprj/singleShot_TB_behav.wcfg}
 
     

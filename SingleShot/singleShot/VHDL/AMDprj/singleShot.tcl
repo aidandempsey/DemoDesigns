@@ -13,14 +13,14 @@
 
         # cmd 
 
-        # cd {C:\videodemo\FiniteStateMachines_FSMs\singleShot} 
+        # cd {C:\repo\HDLGen-ChatGPT\User_Projects\SingleShot\singleShot} 
 
-        # $vivado_bat_path -source C:\videodemo\FiniteStateMachines_FSMs\singleShot\VHDL\AMDprj\singleShot.tcl 
+        # $vivado_bat_path -source C:\repo\HDLGen-ChatGPT\User_Projects\SingleShot\singleShot\VHDL\AMDprj\singleShot.tcl 
 
 
         # Vivado tcl file singleShot.tcl, created in AMDprj folder 
 
-        cd {C:\videodemo\FiniteStateMachines_FSMs\singleShot} 
+        cd {C:\repo\HDLGen-ChatGPT\User_Projects\SingleShot\singleShot} 
 
         # Close_project  Not required. Will advise that Vivado sessions should be closed. 
 
@@ -31,7 +31,7 @@
         set_property target_language VHDL [current_project]
 
         add_files -norecurse  ./VHDL/model/singleShot.vhd
-add_files -norecurse  C:/videodemo/FiniteStateMachines_FSMs/Package/MainPackage.vhd
+add_files -norecurse  C:/repo/HDLGen-ChatGPT/User_Projects/SingleShot/Package/MainPackage.vhd
 
 
         update_compile_order -fileset sources_1

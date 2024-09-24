@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/videodemo/HDLGen-ChatGPT/User_Projects/Mux2_1/Verilog/AMDprj/Mux2_1.runs/synth_1'
+HD_PWD='C:/repo/HDLGen-ChatGPT/User_Projects/Multiplexer/Mux2_1/Verilog/AMDprj/Mux2_1.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Mux2_1_bd_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Mux2_1_bd_wrapper.tcl
+EAStep vivado -log Mux2_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Mux2_1.tcl

@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/demo/RISCV/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1'
+HD_PWD='C:/repo/HDLGen-ChatGPT/User_Projects/RISCV_ALU/RISCV_ALU/VHDL/AMDprj/RISCV_ALU.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log RISCV_ALU_bd_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCV_ALU_bd_wrapper.tcl
+EAStep vivado -log RISCV_ALU.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCV_ALU.tcl

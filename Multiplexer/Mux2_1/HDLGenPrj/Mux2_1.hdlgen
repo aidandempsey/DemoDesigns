@@ -10,8 +10,8 @@
 	<projectManager>
 		<settings>
 			<name>Mux2_1</name>
-			<environment>C:\videodemo\HDLGen-ChatGPT\User_Projects</environment>
-			<location>C:\videodemo\HDLGen-ChatGPT\User_Projects\Mux2_1</location>
+			<environment>C:\repo\HDLGen-ChatGPT\User_Projects</environment>
+			<location>C:\repo\HDLGen-ChatGPT\User_Projects\Multiplexer\Mux2_1</location>
 			<info>None</info>
 		</settings>
 		<EDA>
@@ -30,12 +30,12 @@
 	<hdlDesign>
 		<header>
 			<compName>Mux2_1</compName>
-			<title>2 to 1 Multiplexer</title>
+			<title>Mux2_1</title>
 			<description>2 bit in&amp;#44; 1 bit out</description>
 			<authors>Luke Canny</authors>
 			<company>University of Galway</company>
 			<email>l.canny3@universityofgalway.ie</email>
-			<date>18/04/2024</date>
+			<date>24/09/2024</date>
 		</header>
 		<clkAndRst/>
 		<entityIOPorts>
